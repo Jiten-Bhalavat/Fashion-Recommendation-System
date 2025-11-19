@@ -1,0 +1,89 @@
+# Only ignore unprocessed images from the full dataset (43,941 images)
+# We keep the 500 processed images (2.4MB) and .pkl files (4MB) for immediate demo use
+# Note: The 500 processed images are tracked and will be pushed
+# Users who want the full dataset can download all 44,441 images from Kaggle
+
+# Ignore the full fashion dataset directory (44k+ images)
+fashion_small/
+
+# Ignore large model files
+*.h5
+*.hdf5
+
+# Uploaded images directory
+uploader/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+venv_py312/
+ENV/
+env/
+.venv
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+# PyCharm
+.idea/
+
+# VS Code
+.vscode/
+
+# Spyder
+.spyderproject
+.spyproject
+
+# Environments
+.env
+.env.local
+.env.*.local
+
+# OS specific
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# TensorFlow
+*.ckpt
+checkpoint
+
+# Logs
+*.log
+logs/
+
+# Streamlit
+.streamlit/
+
+# Temporary files
+*.tmp
+temp/
+tmp/
+
