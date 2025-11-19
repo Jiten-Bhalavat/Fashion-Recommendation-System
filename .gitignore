@@ -13,6 +13,11 @@ fashion_small/
 # Uploaded images directory
 uploader/
 
+# MLflow tracking data
+mlruns/
+mlartifacts/
+mlflow.db
+
 # Python
 __pycache__/
 *.py[cod]
@@ -41,6 +46,7 @@ MANIFEST
 # Virtual environments
 venv/
 venv_py312/
+venv_py313/
 ENV/
 env/
 .venv

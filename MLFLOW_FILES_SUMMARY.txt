@@ -1,0 +1,125 @@
+MLflow Integration - New Files Summary
+======================================
+
+NEW FILES CREATED:
+-----------------
+
+1. train_with_mlflow.py
+   - Feature extraction script with MLflow tracking
+   - Logs parameters, metrics, and artifacts
+   - Tracks processing time and feature statistics
+   - Saves model to MLflow
+
+2. main_with_mlflow.py
+   - Streamlit app with MLflow tracking
+   - Tracks each recommendation request
+   - Logs similarity scores and processing times
+   - Optional tracking (can be toggled in UI)
+
+3. mlflow_config.py
+   - Central MLflow configuration
+   - Experiment setup and management
+   - Helper functions for tracking
+   - System info logging
+
+4. view_experiments.py
+   - CLI tool to view MLflow experiments
+   - List experiments and runs
+   - Compare runs by metrics
+   - View detailed run information
+
+5. mlflow_example.py
+   - Simple example demonstrating MLflow usage
+   - Quick start for understanding tracking
+   - Shows basic logging patterns
+
+6. MLFLOW_GUIDE.md
+   - Comprehensive MLflow usage guide
+   - Detailed documentation
+   - Examples and best practices
+   - Troubleshooting tips
+
+7. MLFLOW_QUICK_START.md
+   - Quick reference guide
+   - 3-step getting started
+   - Common commands
+   - Quick tips
+
+8. MLFLOW_FILES_SUMMARY.txt
+   - This file
+   - Summary of all MLflow-related changes
+
+MODIFIED FILES:
+--------------
+
+1. requirements.txt
+   - Added: mlflow~=2.0.1
+   - Added: tabulate~=0.9.0
+
+2. .gitignore
+   - Added: mlruns/ (MLflow tracking data)
+   - Added: mlartifacts/ (MLflow artifacts)
+   - Added: mlflow.db (SQLite database)
+
+3. README.md
+   - Added MLflow integration section
+   - Updated project structure
+   - Added MLflow commands
+   - Updated package list
+
+DIRECTORY STRUCTURE:
+-------------------
+
+Fashion-Recommender-system/
+├── MLflow Integration Files:
+│   ├── train_with_mlflow.py
+│   ├── main_with_mlflow.py
+│   ├── mlflow_config.py
+│   ├── view_experiments.py
+│   ├── mlflow_example.py
+│   ├── MLFLOW_GUIDE.md
+│   ├── MLFLOW_QUICK_START.md
+│   └── MLFLOW_FILES_SUMMARY.txt
+│
+├── Original Files (unchanged):
+│   ├── main.py
+│   ├── app.py
+│   ├── test.py
+│   ├── image_features_embedding.pkl
+│   └── img_files.pkl
+│
+├── Configuration Files:
+│   ├── requirements.txt (updated)
+│   ├── .gitignore (updated)
+│   └── README.md (updated)
+│
+└── Auto-generated:
+    └── mlruns/ (created when running experiments)
+
+QUICK START:
+-----------
+
+1. Install dependencies:
+   pip install -r requirements.txt
+
+2. Run experiment with tracking:
+   python train_with_mlflow.py
+
+3. View MLflow UI:
+   mlflow ui
+
+4. Open browser:
+   http://localhost:5000
+
+NOTES:
+------
+
+- Original files (main.py, app.py, test.py) remain unchanged
+- New MLflow-integrated versions are separate files
+- You can use either version (with or without MLflow)
+- MLflow tracking data is stored locally in mlruns/
+- All MLflow directories are in .gitignore
+
+For detailed usage, see MLFLOW_GUIDE.md
+For quick start, see MLFLOW_QUICK_START.md
+

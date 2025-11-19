@@ -93,8 +93,8 @@ This repository includes pre-processed data for 500 images, so you can run the a
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/Fashion-Recommender-system.git
-cd Fashion-Recommender-system
+git clone https://github.com/Jiten-Bhalavat/Fashion-Recommendation-System.git
+cd Fashion-Recommendation-System
 ```
 
 ### 2. Install dependencies
@@ -105,11 +105,29 @@ pip install -r requirements.txt
 
 ### 3. Run the Streamlit app
 
+**Standard version (no tracking):**
 ```bash
 streamlit run main.py
 ```
 
+**With MLflow tracking:**
+```bash
+streamlit run main_with_mlflow.py
+```
+
 That's it! The app will use the included `image_features_embedding.pkl` and `img_files.pkl` files with 500 pre-processed images.
+
+### 4. View MLflow Experiments (Optional)
+
+To track and analyze your experiments:
+
+```bash
+mlflow ui
+```
+
+Then open http://localhost:5000 in your browser.
+
+📖 For detailed MLflow usage, see [MLFLOW_GUIDE.md](MLFLOW_GUIDE.md)
 
 ---
 
@@ -181,20 +199,66 @@ Now your recommender system will use the complete dataset for more accurate reco
 
 ---
 
+## 📊 MLflow Integration
+
+This project now includes **MLflow** for experiment tracking, model versioning, and performance monitoring!
+
+### Features
+
+- 📈 **Track Parameters**: Model architecture, hyperparameters, dataset size
+- 📊 **Log Metrics**: Processing time, feature statistics, similarity scores
+- 💾 **Save Artifacts**: Feature embeddings, models, recommendations
+- 🔍 **Compare Runs**: Analyze different configurations side-by-side
+- 📝 **Reproducibility**: Every experiment is tracked and reproducible
+
+### MLflow Files
+
+- `train_with_mlflow.py` - Feature extraction with MLflow tracking
+- `main_with_mlflow.py` - Streamlit app with MLflow tracking
+- `mlflow_config.py` - MLflow configuration and setup
+- `view_experiments.py` - CLI tool to view experiments
+- `MLFLOW_GUIDE.md` - Comprehensive MLflow usage guide
+
+### Quick MLflow Commands
+
+```bash
+# Run feature extraction with tracking
+python train_with_mlflow.py
+
+# Start Streamlit app with tracking
+streamlit run main_with_mlflow.py
+
+# View experiments in UI
+mlflow ui
+
+# View experiments in CLI
+python view_experiments.py --list
+```
+
+For detailed MLflow usage, see [MLFLOW_GUIDE.md](MLFLOW_GUIDE.md)
+
+---
+
 ## 📁 Project Structure
 
 ```
 Fashion-Recommender-system/
 ├── main.py                          # Streamlit web application
+├── main_with_mlflow.py              # Streamlit app with MLflow tracking
 ├── app.py                           # Feature extraction script
+├── train_with_mlflow.py             # Feature extraction with MLflow tracking
 ├── test.py                          # Testing script with OpenCV
+├── mlflow_config.py                 # MLflow configuration
+├── view_experiments.py              # CLI tool for viewing experiments
 ├── requirements.txt                 # Python dependencies
+├── MLFLOW_GUIDE.md                  # MLflow usage guide
 ├── image_features_embedding.pkl     # Pre-computed feature embeddings (500 images)
 ├── img_files.pkl                    # Image file paths (500 images)
 ├── fashion_small/
 │   └── images/                      # Fashion dataset images (500 included, 44,441 for full)
 ├── sample/                          # Sample test images
 ├── uploader/                        # Temporary upload directory
+├── mlruns/                          # MLflow tracking data (auto-generated)
 └── Demo/                            # Screenshots and documentation images
 ```
 
@@ -223,6 +287,8 @@ pip install -r requirements.txt
 - scikit-learn 1.0.1
 - OpenCV 4.5.4
 - tqdm 4.62.3
+- MLflow 2.0.1
+- tabulate 0.9.0
 
 ---
 
@@ -293,14 +359,14 @@ Reduce batch size or process images in chunks. Alternatively, use the included 5
 
 ## Built With
 
-- [OpenCV]() - Open Source Computer Vision and Machine Learning software library
-- [Tensorflow]() - TensorFlow is an end-to-end open source platform for machine learning.
-- [Tqdm]() - tqdm is a Python library that allows you to output a smart progress bar by wrapping around any iterable.
-- [streamlit]() - Streamlit is an open-source app framework for Machine Learning and Data Science teams. Create beautiful data apps in hours, not weeks.
-- [pandas]() - pandas is a fast, powerful, flexible and easy to use open source data analysis and manipulation tool, built on top of the Python programming language.
-- [Pillow]() - PIL is the Python Imaging Library by Fredrik Lundh and Contributors.
-- [scikit-learn]() - Scikit-learn is a free software machine learning library for the Python programming language.
-- [opencv-python]() - OpenCV is a huge open-source library for computer vision, machine learning, and image processing.
+- [TensorFlow](https://www.tensorflow.org/) - TensorFlow is an end-to-end open source platform for machine learning.
+- [Streamlit](https://streamlit.io/) - Streamlit is an open-source app framework for Machine Learning and Data Science teams. Create beautiful data apps in hours, not weeks.
+- [MLflow](https://mlflow.org/) - MLflow is an open source platform for managing the ML lifecycle, including experimentation, reproducibility, and deployment.
+- [OpenCV](https://opencv.org/) - Open Source Computer Vision and Machine Learning software library
+- [scikit-learn](https://scikit-learn.org/) - Scikit-learn is a free software machine learning library for the Python programming language.
+- [pandas](https://pandas.pydata.org/) - pandas is a fast, powerful, flexible and easy to use open source data analysis and manipulation tool, built on top of the Python programming language.
+- [Pillow](https://python-pillow.org/) - PIL is the Python Imaging Library by Fredrik Lundh and Contributors.
+- [tqdm](https://tqdm.github.io/) - tqdm is a Python library that allows you to output a smart progress bar by wrapping around any iterable.
 
 ## Conclusion
 
